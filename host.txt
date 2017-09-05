@@ -1,45 +1,0 @@
-SELECT * FROM hostelproj.wardon where username='w1' and pass='123';
-
-SELECT * FROM hostelproj.user where email='a@b' and pass='123' ;
-
-SELECT * FROM hostelproj.complaints where cid='1';
-
-SELECT * FROM hostelproj.feeds where fid='1';
-
-UPDATE `hostelproj`.`wardon` SET `pass`='13' WHERE `username`='w1';
-
-
-UPDATE `hostelproj`.`complaints` SET `status`='0' WHERE `cid`='1';
-
-UPDATE `hostelproj`.`user` SET `pass`='12' WHERE `regno`='14mse1163';
-
-
-SELECT roomno ,user.regno,user.phno,complaints.cid ,'date','time','desc','status' from user,complaints join complener  where 'status'='0' and 'date'='22/1/2017'; 
-
-DELETE FROM `hostelproj`.`feeds` WHERE `fid`='1';
-
-
-INSERT INTO `hostelproj`.`wardon` (`username`, `pass`, `name`, `block`) VALUES ('w1', '123', 'harish', 'A');
-
-
-INSERT INTO `hostelproj`.`user` (`email`, `roomno`, `regno`, `name`, `pass`) VALUES ('a@b', '237', '14mse1163', 'ganesh', '123');
-
-
-INSERT INTO `hostelproj`.`feeds` (`fid`, `name`, `desc`, `img`, `expdate`, `block`) VALUES ('1', 'dff', 'fdfsfs', 'df', '23/3/2017', 'A');
-
-
-INSERT INTO `hostelproj`.`complaints` (`cid`, `date`, `time`, `type`, `desc`, `status`, `feedback`, `block`) VALUES ('1', '23/1/2017', '4:30', 'fds', 'fdfd', '1', 'fdf', 'A');
-
-
-INSERT INTO `hostelproj`.`complener` (`sid`, `cid`, `regno`) VALUES ('1', '1', '14mse1163');
-
-
-SELECT complaints.cid,'date','time','type' FROM hostelproj.complaints join complener on complener.cid=complaints.cid join user on user.regno=complener.regno where user.regno='14mse1163';
-
-
-SELECT complaints.cid,'date','time','type',user.regno,'name',roomno FROM hostelproj.complaints join complener on complener.cid=complaints.cid join user on user.regno=complener.regno where user.block='A';
-
-SELECT complaints.cid,'date','time','type',user.regno,'name',roomno FROM hostelproj.complaints join complener on complener.cid=complaints.cid join user on user.regno=complener.regno where user.block='A' and complaints.status=0 ;
-
-
-SELECT complaints.cid,'date','time','type',user.regno,'name',roomno FROM hostelproj.complaints join complener on complener.cid=complaints.cid join user on user.regno=complener.regno where user.block='A' and complaints.status=0 and complaints.date between 0000-00-00 and 2017-02-12;
